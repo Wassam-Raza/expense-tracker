@@ -1,0 +1,67 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --paper:      #f7f3ea;
+  --paper-line: #e3dcc8;
+  --paper-card: #fffdf8;
+  --ink:        #2b2620;
+  --ink-soft:   #6b6354;
+  --ink-faint:  #a89e8a;
+  --rule:       #d8d0bc;
+  --rule-strong:#c4bb9f;
+
+  --income:     #2f6e4f;
+  --income-bg:  #e8f0e6;
+  --income-bg2: rgba(47,110,79,0.07);
+
+  --expense:    #a13d2b;
+  --expense-bg: #f4e6e1;
+  --expense-bg2:rgba(161,61,43,0.07);
+
+  --accent:     #9b6b3c;
+  --accent-bg:  rgba(155,107,60,0.1);
+
+  --shadow: 0 1px 2px rgba(43,38,32,0.05), 0 6px 20px rgba(43,38,32,0.06);
+  --shadow-lift: 0 10px 30px rgba(43,38,32,0.12);
+
+  --display: 'Fraunces', serif;
+  --body:    'Source Sans 3', sans-serif;
+  --mono:    'Space Mono', monospace;
+
+  --radius: 3px;
+}
+
+html, body, #root { height:100%; }
+
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  background-image:
+    linear-gradient(var(--paper-line) 1px, transparent 1px);
+  background-size: 100% 38px;
+  background-position: 0 110px;
+}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--rule-strong);border-radius:100px}
+
+button,input,select,textarea{font-family:var(--body)}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* Responsive Utilities */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
